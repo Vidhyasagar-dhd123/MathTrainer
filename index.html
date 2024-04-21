@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="game">
+        <div class="Heading">
+            <h1>Math Trainer</h1>
+            
+        </div>
+        <div class="display">
+            
+            
+            <div id="task" class="score">Check Your Addition Speed</div> <span class
+            ="scoreBoard" id="timer">0:00</span>
+            <div class="cook">
+                <button name="arithmetic" type="submit" id="start">Start Test</button> <button id="stop">Stop</button>
+                
+            </div>
+            
+            <div id="problem">Challenge</div>
+            <input type="text" id="ans"><label class="label" for="ans"></label>
+        </div>
+        <div class="controls">
+            <select name="arith" id="arithmetic" required>
+                <option value="+">Addition</option>
+                <option value="*">Multiplication</option>
+                
+                <option value="/">Division</option>
+                <option value="-">Substraction</option>
+            </select>
+                
+            <div id="list">
+                <input type="radio"  name="Level" id="Level" value="Easy"><label for="radio">Easy</label><br>
+                <input type="radio"  name="Level" id="Level" value="Medium"><label for="radio">Medium</label><br>
+                <input type="radio"  name="Level" id="Level" value="Hard"><label for="radio">Hard</label><br>
+                <input type="radio"  name="Level" id="Level" value="Challenging"><label for="radio">Challenging</label><br>
+            </div>
+        </div>
+    </div>
+    
+</body>
+<script src="main.js"></script>
+</html>
