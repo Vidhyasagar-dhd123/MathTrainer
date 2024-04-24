@@ -26,6 +26,39 @@ list.addEventListener('input',(event)=>{
     }
 })
 
+function getDivOp(op1,level){
+    let op = getSmallOp(op1,level/10);
+    if(op1%op==0 && op!=1){
+        return op;
+    }
+    else{
+        
+        while((op1%op)!=0){
+            
+            op++;
+        }
+        if(op1==op || op==1)
+        {
+            op= getDivOp(op1,level)
+            return op;
+        }
+        else
+        return op;
+    }
+    
+}
+
+
+function getSmallOp(op1,level){
+    let op = getRandOp(level)+1;
+    if(op<op1 && op>0){
+        return op;
+    }
+    else{
+        op=getSmallOp(op1,level);
+        return op;
+    }
+}
 getOperator.addEventListener('input',(event)=>{
     switch(event.target.value){
         case "+" : {op= '+'; 
@@ -84,8 +117,22 @@ function mainFunction(i){
     ans.focus();
     let wordLength=0;
     if(i>0){
-        let op1 = getRandOp(level||10)+1;
-        let op2 = getRandOp(level||10)+1;
+        
+        let op1 ;
+        let op2;
+        if(op=='-'){
+            op1 = getRandOp(level*10||100)+1;
+            op2 = getSmallOp(op1,level*10||100);
+        }
+        else if(op=='/'){
+            op1 = getRandOp(level*10||100)+1;
+            op2 = getDivOp(op1,level*10||100);
+        }
+        else{
+            op1 = getRandOp(level||10)+1;
+            op2 = getRandOp(level||10)+1;
+        }
+       
         problem.innerHTML=`${op1 }${op}${ op2}`
         ans.oninput = () =>{
             wordLength++;
