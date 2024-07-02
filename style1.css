@@ -20,7 +20,7 @@ body{
     justify-content: space-around;
     padding: 3%;
     background-color: #233D5C;
-    
+    overflow:scroll;
 }
 
 .rightPanel{
