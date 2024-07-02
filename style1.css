@@ -20,7 +20,7 @@ body{
     justify-content: space-around;
     padding: 3%;
     background-color: #233D5C;
-    overflow:scroll;
+    overflow: scroll;
 }
 
 .rightPanel{
@@ -123,4 +123,23 @@ body{
     color: wheat;
     font-size: 125%;
     border: none;
+}
+
+@media (max-aspect-ratio:9/11) {
+    .rightPanel{
+        position: absolute;
+        left: 0;
+        width: 100vw;
+        top: 25%;
+    }
+    .leftPanel .card{
+        flex-direction: row;
+    }
+    .container{
+        flex-direction: column-reverse;
+    }
+    .top meter{
+        height: 8px;
+    }
+
 }
