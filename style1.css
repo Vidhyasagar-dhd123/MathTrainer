@@ -1,0 +1,126 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+body{
+    height: 100vh;
+    overflow: hidden;
+}
+.container{
+    position: relative;
+    display: flex;
+    background-color: #31B7EA;
+    min-height: 100%;
+}
+
+.leftPanel{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    padding: 3%;
+    background-color: #233D5C;
+    
+}
+
+.rightPanel{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.card{
+    display: flex;
+    flex-direction: column;
+    color: white;
+    justify-content: space-around;
+    height: 100%;
+}
+
+.card div{
+    display: flex;
+    padding: 4%;
+}
+
+.card div label{
+    padding: 1%;
+    font-size: 120%;
+}
+
+.label{
+    color: #FF0;
+    font-size: 140%;
+}
+.counter{
+    float: right;
+    font-size: 200%;
+}
+.counter::first-letter
+{
+    color: red;
+}
+.midPanel{
+    width: 90%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-direction: column;
+}
+
+.top{
+    width: 96%;
+    padding: 2%;
+}
+
+.top meter{
+    width:50%;
+    float: left;
+    height: 75%;
+    transition: .5s linear;
+}
+
+.timer{
+    text-align: center;
+    font-size: 250%;
+    padding: 3.5%;
+}
+
+.question{
+    text-align: center;
+    font-size: 4vw;
+    padding: 1%;
+    background-color: rgba(255,255,255,0.5);
+    min-width: 50%;
+    margin-top: 2%;
+    border-radius: 4px;
+    max-width: 80%;
+    transition: .5s linear;
+}
+
+.ansField{
+    width: 100%;
+    max-width: 80%;
+    margin-top: 2%;
+}
+.ans{
+    width: 100%;
+    outline: none;
+    text-align: center;
+    border: none;
+    border-bottom: 1px solid blue;
+    font-size: 150%;
+    color:#7F3;
+    padding: 3%;
+    background-color: transparent;
+
+}
+
+#start{
+    margin-top: 10%;
+    padding: 3% 2.5%;
+    border-radius: 50%;
+    background-color:#FE0101 ;
+    color: wheat;
+    font-size: 125%;
+    border: none;
+}
