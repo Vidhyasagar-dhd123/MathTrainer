@@ -1,21 +1,18 @@
 const getOperator = document.getElementById("arithmetic");
 const task = document.getElementById('task')
 const start = document.getElementById('start')
-const stop = document.getElementById('stop')
+
 const problem = document.getElementById('problem')
 const timer = document.getElementById('timer')
 const list = document.getElementById('list');
 const ans = document.getElementById('ans')
+const counter = document.getElementById('counter')
 
+let buttonFlag=0;
 
 let level ;
 let timeCount;
 let op='+';
-let highScore = localStorage.getItem("highScore");;
-window.onload=()=>{
-    let hScore = localStorage.getItem("highScore");
-    timer.innerText =`${Math.floor(hScore/6000)}:${Math.floor((hScore/100)%60)}:0${hScore%100}`
-}
 list.addEventListener('input',(event)=>{
     switch(event.target.value){
         case "Easy" : level= 10; break;
@@ -82,9 +79,9 @@ function getRandOp(key){
 
 
 
-start.onclick=()=>{
-    let hScore = localStorage.getItem("highScore");
-    timer.innerText =`${Math.floor(hScore/6000)}:${Math.floor((hScore/100)%60)}:0${hScore%100}`
+start.onclick=()=>{if(!buttonFlag){
+    buttonFlag = 1;
+    start.innerHTML = "Stop"
     window.clearInterval(timeCount)
         mainFunction(10)
         timer.style.fontSize ="30px";
@@ -102,18 +99,19 @@ start.onclick=()=>{
             
         }
     },10)
-    if(count<=highScore){
-        highScore = count;
-        localStorage.setItem("highScore",highScore);
-        }
 }
 
-stop.onclick=()=>{
+else{
+
     window.clearInterval(timeCount)
-}
+    start.innerHTML = "Start"
 
+buttonFlag = 0;
+}
+}
 function mainFunction(i){
-    ans.nextElementSibling.innerText = i;
+    document.querySelector('#mtr').value=10-i;
+    counter.innerHTML = `${i}/10`;
     ans.focus();
     let wordLength=0;
     if(i>0){
@@ -150,10 +148,10 @@ function mainFunction(i){
         }
     }
     else{
+        buttonFlag = 0;
+        start.innerHTML = "Start"
         window.clearInterval(timeCount)
-        timer.style = "padding:0px; margin:0;"
-        problem.style = "padding:0px; margin:0;"
-        timer.style.fontSize ="60px";
+        timer.style.fontSize ="240%";
         problem.innerHTML="<h1>Finished</h1>"
         return;
     }
