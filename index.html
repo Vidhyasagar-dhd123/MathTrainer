@@ -3,46 +3,44 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <link rel="icon" type="image/png" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAIAAACRXR/mAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAGuSURBVFhH7Zc9koMwDEZdUlJSchTKHIEjUHILjkDJMTgaJftNpPF4soD1451s4VeBg8yLJGuScP5LqpaGqqWhamm40Nr3fRiGbdv4/htcaHVdF0JomuaLZhdaEIJWETNz4i+0lmUhLQAzXtUDp7ZtbZtct3xqhmteVULNQPCSmNuAeZ5pR3PCKBxM08RLYm61juOITWZLGMUCvtfwFONMGMUCvtfwFIOE8cb6rdHvHFlcC/DGIWgPuaffQSYmtpe2jhQFDP0OMlrppOAlGRxjShXIh/H2mhc4GwvkwwxjwtlYIB9mGBP0PLA1FshraceEv4JAFMkvkY0JfwWBKFI1JuhJYK4gEGnJx8S6rvycI1VAGsyvytUxVnAcR14yIdUS1pGeATgovGRCqpXW8W6AFTmDhCI+O8CKnEFCEZ/9YUgfAc8ZJHRf6yFhBSsIdFukE//jSBasIFBv8ftIIk9939Mi8FcQqLU+RityRn8GCee4ilgSzgpvCb56g1vnuIpYtGIdU4rULmLRSusIXq9XqSRFLFogmhUsXIpR66+pWhqqloaqpaFqaahacs7zB5dCskmXE1dgAAAAAElFTkSuQmCC"> 
-   <title>Math Trainer</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+    <link rel="stylesheet" href="style1.css">
 </head>
 <body>
-    <div class="game">
-        <div class="Heading">
-            <h1>Math Trainer</h1>
-            
-        </div>
-        <div class="display">
-            
-            
-            <div id="task" class="score">Check Your Addition Speed</div> <span class
-            ="scoreBoard" id="timer">0:00</span>
-            <div class="cook">
-                <button name="arithmetic" type="submit" id="start">Start Test</button> <button id="stop">Stop</button>
-                
+    <div class="container">
+        <div class="leftPanel">
+            <div class="label">Level</div>
+            <div class="card" id="list">
+                <div id="task"></div>
+                <div><input type="radio"  name="level" id="level" checked="checked" value="Easy"><label for="level">Easy</label></div>
+                <div><input type="radio"  name="level" id="level2"  value="Medium"><label for="level2">Medium</label></div>
+                <div><input type="radio"  name="level" id="level3"  value="Hard"><label for="level3">Hard</label></div>
+                <div><input type="radio"  name="level" id="level4"  value="Challenging"><label for="level4">Challenging</label></div>
             </div>
-            
-            <div id="problem">Challenge</div>
-            <input type="text" id="ans"><label class="label" for="ans"></label>
-        </div>
-        <div class="controls">
-            <select name="arith" id="arithmetic" required>
-                <option value="+">Addition</option>
-                <option value="*">Multiplication</option>
-                
-                <option value="/">Division</option>
-                <option value="-">Substraction</option>
-            </select>
-                
-            <div id="list">
-                <input type="radio"  name="Level" id="Level" value="Easy"><label for="radio">Easy</label><br>
-                <input type="radio"  name="Level" id="Level" value="Medium"><label for="radio">Medium</label><br>
-                <input type="radio"  name="Level" id="Level" value="Hard"><label for="radio">Hard</label><br>
-                <input type="radio"  name="Level" id="Level" value="Challenging"><label for="radio">Challenging</label><br>
+            <div class="label">Operation</div>
+            <div class="card" id="arithmetic">
+                <div><input  type="radio" id="arith1" name="arith" checked="checked" value="+"><label for="arith1">Addition</label></div>
+                <div><input  type="radio" id="arith2" name="arith"  value="-"><label for="arith2">Subtraction</label></div>
+                <div><input  type="radio" id="arith3" name="arith"  value="*"><label for="arith3">Multiplication</label></div>
+                <div><input  type="radio" id="arith4" name="arith"  value="/"><label for="arith4">Divide</label></div>
             </div>
+         </div>
+        <div class="rightPanel">
+            <div class="top">
+            <meter min="0" max="10" value="10" id="mtr"></meter>
+            <div id="counter" class="counter">10/10</div></div>
+            <div class="midPanel">
+                <div id="timer" class="timer">00:00</div>
+                <div id="problem" class="question" id="question">Challenge</div>
+                <div class="ansField">
+                    <input  id="ans" type="number" class="ans">
+                </div>
+                <button id="start">Start</button>
+            
+            </div>
+
         </div>
-    </div>
+   </div>
     
 </body>
 <script src="main.js"></script>
