@@ -134,6 +134,7 @@ body{
     }
     .leftPanel .card{
         flex-direction: row;
+        bottom: 0;
     }
     .container{
         flex-direction: column-reverse;
